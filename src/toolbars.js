@@ -70,6 +70,9 @@ export function init(mathEditor, hasRichTextFocus, l, baseUrl) {
         .on('mousedown', '[data-js="expandCollapseCharacters"]', e => {
             e.preventDefault()
             $toolbar.toggleClass('rich-text-editor-characters-expanded')
+            /*add expanded class to parent view*/
+            var expanded = $toolbar.hasClass('rich-text-editor-characters-expanded');
+            window.parent.ytl_editorExpanded(expanded);
         })
         .on('mousedown', '[data-js="richTextEditorHelp"]', e => {
             e.preventDefault()
@@ -130,12 +133,21 @@ function initSpecialCharacterToolbar($toolbar, mathEditor, hasAnswerFocus) {
         )
         .on('mousedown', 'button', e => {
             e.preventDefault()
-
+            var mathEditorFocus = $("body").hasClass("math-editor-focus");
+            if (!hasAnswerFocus() && !mathEditorFocus) {
+               $('[data-js="answer"]').focus();
+            }
+            /**open latex field if not opened */
             const character = e.currentTarget.innerText
             const command = e.currentTarget.dataset.command
             const useWrite = e.currentTarget.dataset.usewrite === 'true'
-            if (hasAnswerFocus()) window.document.execCommand('insertText', false, character)
-            else mathEditor.insertMath(command || character, undefined, useWrite)
+            if (hasAnswerFocus()) {
+                mathEditor.insertNewEquation();
+                mathEditor.insertMath(command || character, undefined, useWrite, true);       
+            }//window.document.execCommand('insertText', false, character)
+            else {
+                mathEditor.insertMath(command || character, undefined, useWrite);
+            }
         })
 }
 

@@ -153,8 +153,8 @@ export function init(
         u.scrollIntoView($mathEditorContainer)
     }
 
-    function insertMath(symbol, alternativeSymbol, useWrite) {
-        if (focus.latexField) {
+    function insertMath(symbol, alternativeSymbol, useWrite, latexFocus) {
+        if (latexFocus || focus.latexField) {
             u.insertToTextAreaAtCursor($latexField.get(0), alternativeSymbol || symbol)
             onLatexUpdate()
         } else if (focus.equationField) {
