@@ -72,7 +72,8 @@ export function init(mathEditor, hasRichTextFocus, l, baseUrl) {
             $toolbar.toggleClass('rich-text-editor-characters-expanded')
             /*add expanded class to parent view*/
             var expanded = $toolbar.hasClass('rich-text-editor-characters-expanded');
-            window.parent.ytl_editorExpanded(expanded, $toolbar.height());
+            var frameId = window.frameElement.getAttribute("id");
+            window.parent.ytlEditorExpanded(expanded, $toolbar.height(), frameId);
         })
         .on('mousedown', '[data-js="richTextEditorHelp"]', e => {
             e.preventDefault()
