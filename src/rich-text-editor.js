@@ -91,8 +91,6 @@ export const makeRichText = (answer, options, onValueChanged = () => {}) => {
 function toggleRichTextToolbar(isVisible, $editor) {
     $('body').toggleClass('rich-text-editor-focus', isVisible)
     $editor.toggleClass('rich-text-focused', isVisible)
-    var frameId = window.frameElement.getAttribute("id");
-    window.parent.ytlToggleEditorToolbar(frameId, isVisible);
 }
 
 function onRichTextEditorFocus($element) {
