@@ -98,7 +98,7 @@ export function init(mathEditor, hasRichTextFocus, l, baseUrl) {
     const $mathToolbar = $toolbar.find('[data-js="mathToolbar"]')
     initSpecialCharacterToolbar($toolbar, mathEditor, hasRichTextFocus)
     initMathToolbar($mathToolbar, mathEditor, baseUrl)
-    initNewEquation($newEquation, mathEditor, hasRichTextFocus)
+    initNewEquation($newEquation, mathEditor, hasRichTextFocus, $toolbar)
 
     if ($.fn.i18n) {
         $toolbar.i18n()
@@ -174,12 +174,14 @@ function initMathToolbar($mathToolbar, mathEditor) {
         })
 }
 
-function initNewEquation($newEquation, mathEditor, hasAnswerFocus) {
+function initNewEquation($newEquation, mathEditor, hasAnswerFocus, $toolbar) {
     $newEquation.mousedown(
         (e => {
             e.preventDefault()
             if (!hasAnswerFocus()) return // TODO: remove when button is only visible when textarea has focus
             mathEditor.insertNewEquation()
+            var frameId = window.frameElement.getAttribute("id")
+            window.parent.ytlEditorResize($toolbar.height(), frameId)
         }).bind(this)
     )
 }
