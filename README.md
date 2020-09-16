@@ -17,13 +17,12 @@ Rollup is probably needed.
 
 - MathQuill (https://github.com/digabi/mathquill)
 - MathJax-Node
-- Bacon
 - Jquery
 - sanitize-html
 
 ## Getting started
 
-1. Install [Node.js](https://nodejs.org/en/) 
+1. Install [Node.js](https://nodejs.org/en/)
 2. Run `npm install`.
 3. Run `npm run dev`.
 4. Go to [http://localhost:5000](http://localhost:5000)
@@ -33,10 +32,6 @@ Rollup is probably needed.
 Demo: http://digabi.github.io/rich-text-editor/
 
 Source: https://github.com/digabi/rich-text-editor/blob/master/index.html
-
-## Deploy to https://math-demo.abitti.fi/
-
-Update `rich-text-editor` dependency in [https://github.com/digabi/math-demo/](https://github.com/digabi/math-demo/), build and deploy it according to its documentation.
 
 # License
 
