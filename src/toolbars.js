@@ -180,8 +180,8 @@ function initNewEquation($newEquation, mathEditor, hasAnswerFocus, $toolbar) {
             e.preventDefault()
             if (!hasAnswerFocus()) return // TODO: remove when button is only visible when textarea has focus
             mathEditor.insertNewEquation()
-            var frameId = window.frameElement.getAttribute("id")
-            window.parent.ytlEditorResize($toolbar.height(), frameId)
+            /*var frameId = window.frameElement.getAttribute("id")
+            window.parent.ytlEditorResize($toolbar.height(), frameId)*/
         }).bind(this)
     )
 }

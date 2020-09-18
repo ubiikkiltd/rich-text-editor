@@ -196,5 +196,10 @@ export function init(
 
     function toggleMathToolbar(isVisible) {
         $('body').toggleClass('math-editor-focus', isVisible)
+        if(isVisible) {
+            var $toolbar = $(".rich-text-editor-tools");
+            var frameId = window.frameElement.getAttribute("id")
+            window.parent.ytlEditorResize($toolbar.height(), frameId)
+        }
     }
 }
