@@ -1,8 +1,8 @@
 const urlParams = new URLSearchParams(window.location.search);
-const useAsFroalaPlugin = (urlParams.get('useAsFroalaPlugin') === 'true');
+const useAsFroalaPlugin = urlParams.get('useAsFroalaPlugin');
 
 window.RichTextEditor = {
-    useAsFroalaPlugin: useAsFroalaPlugin != null ? useAsFroalaPlugin : true
+    useAsFroalaPlugin: useAsFroalaPlugin != null ? (useAsFroalaPlugin === 'true') : true
 }
 
 import $ from 'jquery'
