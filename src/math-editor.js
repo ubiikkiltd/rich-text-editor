@@ -154,7 +154,7 @@ export function init(
     }
 
     function insertMath(symbol, alternativeSymbol, useWrite, latexFocus) {
-        if (latexFocus || focus.latexField) {
+        if (focus.latexField || (window.RichTextEditor.useAsFroalaPlugin && latexFocus)) {
             u.insertToTextAreaAtCursor($latexField.get(0), alternativeSymbol || symbol)
             onLatexUpdate()
         } else if (focus.equationField) {

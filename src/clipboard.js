@@ -27,7 +27,7 @@ function onPasteBlob(event, file, saver, $answer, onValueChanged, limit) {
     if (fileTypes.indexOf(file.type) >= 0) {
         if (u.existingScreenshotCount($answer) + 1 <= limit) {
             saver({ data: file, type: file.type, id: String(new Date().getTime()) }).then(screenshotUrl => {
-                const img = `<img src="${screenshotUrl}"/>`
+                const img = `<img class="unuploaded" src="${screenshotUrl}"/>`
                 window.document.execCommand('insertHTML', false, img)
             })
         } else {

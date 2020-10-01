@@ -1,3 +1,10 @@
+const urlParams = new URLSearchParams(window.location.search);
+const useAsFroalaPlugin = (urlParams.get('useAsFroalaPlugin') === 'true');
+
+window.RichTextEditor = {
+    useAsFroalaPlugin: useAsFroalaPlugin != null ? useAsFroalaPlugin : true
+}
+
 import $ from 'jquery'
 import * as u from './util'
 import * as toolbars from './toolbars'
