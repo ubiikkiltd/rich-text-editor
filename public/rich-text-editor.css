@@ -353,7 +353,7 @@
 
 .rich-text-editor-modal-column-2 {
   flex: 2;
-  visibility: hidden;
+  visibility: hidden; /* Added for Froala plugin */
 }
 
 .rich-text-editor-modal-column h3 {
