@@ -6,3 +6,5 @@ language: node_js
 node_js:
   - stable
 sudo: required
+env:
+  - TYPECHECK=1
