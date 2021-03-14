@@ -21,7 +21,7 @@
     "generateMathButtons": "scripts/createMathSvg.js && prettier --write src/latexCommandsWithSvg.js",
     "lint": "eslint .",
     "prepare": "npm run build && npm run build:bundle",
-    "publish:cloubi": "npx npe name @ubiikkiltd/rich-text-editor && npm publish --ignore-scripts --@ubiikkiltd:registry='https://npm.pkg.github.com/ubiikkiltd' && npx npe name rich-text-editor"
+    "publish:cloubi": "npx npe name @ubiikkiltd/rich-text-editor && npm publish --ignore-scripts --@ubiikkiltd:registry='https://npm.pkg.github.com/ubiikkiltd' ; npx npe name rich-text-editor"
   },
   "repository": {
     "type": "git",

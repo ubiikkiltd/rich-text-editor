@@ -37,7 +37,7 @@ Rollup is probably needed.
 4. Go to [http://localhost:5000](http://localhost:5000)
 
 ## Publishing module to Github
-1. Run `dotenv -- npm publish`
+1. Run `dotenv -- npm run publish:cloubi`
 
 ## Example of direct usage
 
