@@ -21,12 +21,23 @@ Rollup is probably needed.
 - Jquery
 - sanitize-html
 
+## Preliminary setup
+1. Install dotenv-cli: `npm install -g dotenv-cli`
+2. Ensure that npe is installed: `npm install -g npe`
+3. Run npm install: `dotenv -- npm install`
+4. Create .env -file
+5. Ensure that you have Github PAT that can be used publish modules to Github
+6. Copy content from `.example_env` -file and change `CLOUBI_PUBLISH_PACKAGES_PAT` value to your PAT
+
 ## Getting started
 
 1. Install [Node.js](https://nodejs.org/en/) 
 2. Run `npm install`.
 3. Run `npm run dev`.
 4. Go to [http://localhost:5000](http://localhost:5000)
+
+## Publishing module to Github
+1. Run `dotenv -- npm run publish:cloubi`
 
 ## Example of direct usage
 
